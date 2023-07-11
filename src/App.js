@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import ConnectWallet from './pages/ConnectWallet/ConnectWallet';
+import { useEffect, useState } from "react";
+import { useMoralis } from "react-moralis";
+import { MoralisProvider } from "react-moralis";
+import Home from './pages/Home/Home';
 import './App.css';
 
 function App() {
+
   return (
+    <MoralisProvider initializeOnMount={false}>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <div>
+        <ConnectWallet></ConnectWallet>
+      </div>
+      <Home></Home>
       </header>
     </div>
+    </MoralisProvider>
   );
 }
 
